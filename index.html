@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Almeida - Psicólogo Clínico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .btn-primary:hover { background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%); }
+        .section-padding { padding: 80px 0; }
+        .floating-btn { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .floating-btn:hover { transform: scale(1.05); }
+        .service-card { background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); }
+        .hero-pattern { background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.2) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255,255,255,0.2) 2%, transparent 0%); background-size: 100px 100px; }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-800">Pedro Almeida</h1>
+                    <span class="ml-2 text-sm text-gray-600">Psicólogo Clínico</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-purple-600 transition">Sobre</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-purple-600 transition">Serviços</a>
+                    <a href="#informacoes" class="text-gray-700 hover:text-purple-600 transition">Informações</a>
+                    <a href="#agendamento" class="text-gray-700 hover:text-purple-600 transition">Agendamento</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://instagram.com/pedroalmeida.psi" target="_blank" class="text-gray-600 hover:text-purple-600 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/5583996255274" target="_blank" class="text-gray-600 hover:text-green-600 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="mailto:psi.phna@gmail.com" class="text-gray-600 hover:text-blue-600 transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 pt-20 section-padding text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 1px, transparent 1px), radial-gradient(circle at 80% 50%, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 60px 60px;"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                ✨ Psicólogo Clínico
+              </span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Transforme sua <span class="text-orange-300 relative">
+                vida
+                <div class="absolute -bottom-2 left-0 w-full h-1 bg-orange-300 rounded-full opacity-60"></div>
+              </span> com cuidado profissional
+            </h1>
+            <p class="text-xl mb-8 text-emerald-50 leading-relaxed">
+              Ofereço psicoterapia individual, atendimento de urgência e avaliação psicológica com abordagem humanista, focada no seu bem-estar e crescimento pessoal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#agendamento" class="bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-600 transition-all duration-300 text-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                <i class="fas fa-calendar-check mr-2"></i>
+                Agendar Consulta
+              </a>
+              <a href="#sobre" class="border-2 border-emerald-200 bg-white bg-opacity-10 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-emerald-800 transition-all duration-300 text-center backdrop-blur-sm">
+                <i class="fas fa-user-md mr-2"></i>
+                Conhecer Profissional
+              </a>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-white bg-opacity-15 backdrop-blur-lg rounded-3xl p-8 border border-white border-opacity-30 shadow-2xl">
+              <!-- Foto do Profissional -->
+              <div class="relative mb-6">
+                <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full blur opacity-30"></div>
+                <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; overflow: hidden; border-radius: 50%; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+                    src="https://www.canva.com/design/DAGXrpXcc3c/jJmlGOjcUx0Z4RVUWc__nQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                  </iframe>
+                </div>
+              </div>
+              
+              <!-- Informações do Profissional -->
+              <h3 class="text-3xl font-bold mb-2 text-white">Pedro Almeida</h3>
+              <p class="text-lg text-emerald-100 mb-2">Psicólogo Clínico</p>
+              <p class="text-sm text-emerald-200 mb-6">CRP 13/0000 • Formado pela UFPB</p>
+              
+              <!-- Badges de Especialidades -->
+              <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="bg-orange-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Abordagem Humanista
+                </span>
+                <span class="bg-teal-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Atendimento Online
+                </span>
+                <span class="bg-pink-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Plantão 24h
+                </span>
+              </div>
+              
+              <!-- Botão de Contato -->
+              <a href="https://wa.me/5583996255274" target="_blank" class="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                Conversar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-orange-400 bg-opacity-20 rounded-full blur-xl"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-400 bg-opacity-20 rounded-full blur-xl"></div>
+      <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-teal-300 bg-opacity-20 rounded-full blur-lg"></div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Sobre o Profissional</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experiente em psicoterapia individual e atendimento de urgência psicológica com abordagem humanista
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Formação e Experiência</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-graduation-cap text-purple-600 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Formação Acadêmica</p>
+                                    <p class="text-gray-600">Psicologia pela Universidade Federal da Paraíba com ênfase em Psicologia Clínica</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-heart text-purple-600 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Abordagem Terapêutica</p>
+                                    <p class="text-gray-600">Abordagem Centrada na Pessoa - Base Humanista</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-certificate text-purple-600 mt-1"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Registro Profissional</p>
+                                    <p class="text-gray-600">CRP 13/0000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 card-hover">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Psicoterapia Individual</h4>
+                        <p class="text-gray-600">Experiente em atendimento psicoterapêutico individual com foco na abordagem humanista centrada na pessoa.</p>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 card-hover">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Atendimento de Urgência</h4>
+                        <p class="text-gray-600">Experiência sólida em plantão de urgência psicológica para situações que necessitam intervenção imediata.</p>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 card-hover">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Avaliação Psicológica</h4>
+                        <p class="text-gray-600">Experiente em psicodiagnóstico com público geral e especializado em mães de crianças com TEA.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#agendamento" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition">
+                    Agende sua Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Serviços Oferecidos</h2>
+                <p class="text-xl text-gray-600">Atendimento online e presencial (em breve) com qualidade e dedicação</p>
+            </div>
+            
+            <!-- Serviços Principais -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Serviços Principais</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-comments text-2xl text-purple-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Psicoterapia Individual</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Atendimento psicoterapêutico individual com abordagem humanista centrada na pessoa.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                            Agendar Consulta
+                        </button>
+                    </div>
+                    
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-ambulance text-2xl text-red-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Plantão de Urgência 24h</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Atendimento de urgência psicológica para situações que necessitam intervenção imediata.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-purple-500 mr-2"></i>
+                                <span>Terças, Quintas e Sábados</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                            Solicitar Urgência
+                        </button>
+                    </div>
+                    
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clipboard-list text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Avaliação Psicológica</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Psicodiagnóstico completo que ao final é gerado um laudo detalhado com orientações específicas.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Solicitar Avaliação
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outros Serviços -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Outros Serviços</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white rounded-xl p-6 card-hover border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-green-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800">Consultoria de RH</h4>
+                        </div>
+                        <p class="text-gray-600 mb-4">Consultoria especializada em recursos humanos para pequenos negócios.</p>
+                        <button onclick="scrollToAgendamento()" class="text-green-600 font-semibold hover:text-green-700 transition">
+                            Saiba mais →
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 card-hover border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-compass text-orange-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800">Orientação Vocacional</h4>
+                        </div>
+                        <p class="text-gray-600 mb-4">Orientação profissional para descobrir sua vocação e carreira ideal.</p>
+                        <button onclick="scrollToAgendamento()" class="text-orange-600 font-semibold hover:text-orange-700 transition">
+                            Saiba mais →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações Section -->
+    <section id="informacoes" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Entenda os Serviços</h2>
+                <p class="text-xl text-gray-600">Conheça melhor cada modalidade de atendimento oferecida</p>
+            </div>
+            
+            <div class="space-y-12">
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">O que é Psicoterapia?</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-700 mb-4">
+                                A psicoterapia é um processo de autoconhecimento e transformação pessoal, onde você terá um espaço seguro e acolhedor para explorar seus sentimentos, pensamentos e comportamentos.
+                            </p>
+                            <p class="text-gray-700 mb-4">
+                                Através da Abordagem Centrada na Pessoa, o foco está em suas próprias capacidades de crescimento e mudança, respeitando seu ritmo e suas escolhas.
+                            </p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Ambiente acolhedor e sem julgamentos</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Foco no seu crescimento pessoal</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Respeito ao seu ritmo e processo</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-gray-700">Desenvolvimento de autoconhecimento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">O que é Avaliação Psicológica?</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-gray-700 mb-4">
+                                A avaliação psicológica (psicodiagnóstico) é um processo científico que utiliza técnicas e instrumentos específicos para compreender aspectos do funcionamento psicológico.
+                            </p>
+                            <p class="text-gray-700 mb-4">
+                                É especialmente útil para esclarecer questões sobre personalidade, capacidades cognitivas, emocionais e comportamentais, auxiliando no planejamento de intervenções adequadas.
+                            </p>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-search text-blue-500 mr-3"></i>
+                                <span class="text-gray-700">Investigação científica e ética</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-brain text-blue-500 mr-3"></i>
+                                <span class="text-gray-700">Análise de aspectos cognitivos</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-heart text-blue-500 mr-3"></i>
+                                <span class="text-gray-700">Compreensão emocional</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt text-blue-500 mr-3"></i>
+                                <span class="text-gray-700">Laudo Psicológico detalhado e com orientações terapêuticas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Principais Diferenças</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl p-6">
+                            <h4 class="text-lg font-semibold text-purple-600 mb-4">Psicoterapia</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Processo contínuo e regular</li>
+                                <li>• Foco no crescimento pessoal</li>
+                                <li>• Trabalha questões emocionais</li>
+                                <li>• Desenvolve autoconhecimento</li>
+                                <li>• Promove mudanças comportamentais</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-6">
+                            <h4 class="text-lg font-semibold text-blue-600 mb-4">Avaliação Psicológica</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Processo específico e pontual</li>
+                                <li>• Foco no diagnóstico</li>
+                                <li>• Investiga funcionamento psíquico</li>
+                                <li>• Utiliza testes padronizados</li>
+                                <li>• Gera laudo psicológico detalhado com orientações terapêuticas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#agendamento" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition">
+                    Agende sua Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento Section -->
+    <section id="agendamento" class="section-padding bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Agende sua Consulta</h2>
+                <p class="text-xl text-gray-600">Entre em contato e dê o primeiro passo para cuidar da sua saúde mental</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <a href="https://wa.me/5583996255274" target="_blank" class="bg-green-50 border-2 border-green-200 rounded-xl p-6 text-center hover:border-green-400 transition card-hover">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-whatsapp text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">WhatsApp</h3>
+                        <p class="text-gray-600 text-sm mb-3">Resposta rápida e prática</p>
+                        <p class="text-green-600 font-semibold">(83) 9 9625-5274</p>
+                    </a>
+                    
+                    <a href="mailto:psi.phna@gmail.com" class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 text-center hover:border-blue-400 transition card-hover">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">E-mail</h3>
+                        <p class="text-gray-600 text-sm mb-3">Para informações detalhadas</p>
+                        <p class="text-blue-600 font-semibold">psi.phna@gmail.com</p>
+                    </a>
+                    
+                    <a href="https://instagram.com/pedroalmeida.psi" target="_blank" class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 text-center hover:border-purple-400 transition card-hover">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-instagram text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Instagram</h3>
+                        <p class="text-gray-600 text-sm mb-3">Conteúdo e dicas</p>
+                        <p class="text-purple-600 font-semibold">@pedroalmeida.psi</p>
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">Horários de Atendimento</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Psicoterapia Individual</h4>
+                            <p class="text-gray-600 text-sm">Segunda a Sábado: 8h às 22h</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Plantão de Urgência 24h</h4>
+                            <p class="text-gray-600 text-sm">Terças, Quintas e Sábados</p>
+                            <p class="text-gray-600 text-sm">Disponível 24 horas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pedro Almeida</h3>
+                    <p class="text-gray-300 mb-4">Psicólogo Clínico</p>
+                    <p class="text-gray-400 text-sm">CRP 13/0000</p>
+                    <p class="text-gray-400 text-sm">Formado pela UFPB</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>Psicoterapia Individual</li>
+                        <li>Plantão de Urgência 24h</li>
+                        <li>Avaliação Psicológica</li>
+                        <li>Consultoria de RH</li>
+                        <li>Orientação Vocacional</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300 text-sm">
+                        <p><i class="fab fa-whatsapp mr-2"></i>(83) 9 9625-5274</p>
+                        <p><i class="fas fa-envelope mr-2"></i>psi.phna@gmail.com</p>
+                        <p><i class="fab fa-instagram mr-2"></i>@pedroalmeida.psi</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Modalidades</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>✓ Atendimento Online</li>
+                        <li>⏳ Presencial (em breve)</li>
+                        <li>🕐 Plantão 24h</li>
+                        <li>📋 Avaliações Personalizadas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Pedro Almeida - Psicólogo Clínico. Todos os direitos reservados.
+                </p>
+                <p class="text-gray-500 text-xs mt-2">
+                    Este site é apenas informativo. Em caso de emergência, procure atendimento médico imediato.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="#agendamento" class="floating-btn bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition">
+        <i class="fas fa-calendar-plus text-xl"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Function to scroll to agendamento
+        function scrollToAgendamento() {
+            document.getElementById('agendamento').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Mobile menu toggle (if needed)
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96aee62de2d36d5a',t:'MTc1NDQ4NzEzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
