@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Almeida - Psicólogo Clínico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .btn-primary:hover { background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%); }
+        .section-padding { padding: 80px 0; }
+        .floating-btn { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .floating-btn:hover { transform: scale(1.05); }
+        .service-card { background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); }
+        .hero-pattern { background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.2) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255,255,255,0.2) 2%, transparent 0%); background-size: 100px 100px; }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Carousel Styles */
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .carousel-dot.active {
+            background-color: #7c3aed !important;
+            transform: scale(1.2);
+        }
+        
+        /* Service Carousel Styles */
+        .service-carousel-slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .service-carousel-slide.active {
+            opacity: 1;
+        }
+        .service-carousel-dot.active {
+            background-color: white !important;
+            transform: scale(1.2);
+        }
+        
+        @keyframes progressFill {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-800">Pedro Almeida</h1>
+                    <span class="ml-2 text-sm text-gray-600">Psicólogo Clínico</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-purple-600 transition">Sobre</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-purple-600 transition">Serviços</a>
+                    <a href="#faq" class="text-gray-700 hover:text-purple-600 transition">FAQ</a>
+                    <a href="#agendamento" class="text-gray-700 hover:text-purple-600 transition">Agendamento</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/pedroalmeida.psi/" target="_blank" class="text-gray-600 hover:text-purple-600 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/5583996255274" target="_blank" class="text-gray-600 hover:text-green-600 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <button onclick="copyEmail()" class="text-gray-600 hover:text-blue-600 transition" title="Copiar e-mail">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 pt-20 section-padding text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 1px, transparent 1px), radial-gradient(circle at 80% 50%, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 60px 60px;"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                ✨ Psicólogo Clínico
+              </span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Cuide do seu <span class="text-orange-300 relative">
+                bem-estar
+                <div class="absolute -bottom-2 left-0 w-full h-1 bg-orange-300 rounded-full opacity-60"></div>
+              </span> com atendimento profissional
+            </h1>
+            <p class="text-xl mb-8 text-emerald-50 leading-relaxed">
+              Ofereço psicoterapia individual, atendimento de urgência e avaliação psicológica com abordagem humanista, focada no seu bem-estar e crescimento pessoal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#agendamento" class="bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-600 transition-all duration-300 text-center shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                <i class="fas fa-calendar-check mr-2"></i>
+                Agendar Consulta
+              </a>
+              <a href="#sobre" class="border-2 border-emerald-200 bg-white bg-opacity-10 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-emerald-800 transition-all duration-300 text-center backdrop-blur-sm">
+                <i class="fas fa-user mr-2"></i>
+                Conhecer o Profissional
+              </a>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-white bg-opacity-15 backdrop-blur-lg rounded-3xl p-8 border border-white border-opacity-30 shadow-2xl">
+              <!-- Foto do Profissional -->
+              <div class="relative mb-6">
+                <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full blur opacity-30"></div>
+                <div class="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white border-opacity-30 shadow-2xl">
+                  <iframe 
+                    src="https://www.canva.com/design/DAGXrpXcc3c/jJmlGOjcUx0Z4RVUWc__nQ/view?embed" 
+                    class="w-full h-full object-cover"
+                    style="border: none; border-radius: 50%;"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+              
+              <!-- Informações do Profissional -->
+              <h3 class="text-3xl font-bold mb-2 text-white">Pedro Almeida</h3>
+              <p class="text-lg text-emerald-100 mb-2">Psicólogo Clínico</p>
+              <p class="text-sm text-emerald-200 mb-6">CRP 13/13565</p>
+              
+              <!-- Badges de Especialidades -->
+              <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="bg-orange-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Abordagem Humanista
+                </span>
+                <span class="bg-teal-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Atendimento Online
+                </span>
+                <span class="bg-pink-500 bg-opacity-80 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Plantão 24h
+                </span>
+              </div>
+              
+              <!-- Botão de Contato -->
+              <a href="https://wa.me/5583996255274" target="_blank" class="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                Conversar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-orange-400 bg-opacity-20 rounded-full blur-xl"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-pink-400 bg-opacity-20 rounded-full blur-xl"></div>
+      <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-teal-300 bg-opacity-20 rounded-full blur-lg"></div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Sobre mim</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experiente em psicoterapia individual e atendimento de urgência psicológica com abordagem humanista
+                </p>
+            </div>
+            
+            <!-- Formação do Profissional -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <!-- Foto de Formatura -->
+                <div class="text-center">
+                    <div class="relative mb-8">
+                        <!-- Decorative background -->
+                        <div class="absolute -inset-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-full blur-2xl opacity-20"></div>
+                        
+                        <!-- Photo container -->
+                        <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto aspect-video rounded-2xl overflow-hidden border-4 sm:border-6 md:border-8 border-white shadow-2xl bg-gradient-to-br from-purple-50 to-blue-50">
+                            <img 
+                                src="./foto-formatura.jpg" 
+                                alt="Pedro Almeida - Formatura em Psicologia" 
+                                class="w-full h-full object-cover object-center"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            >
+                            <!-- Fallback content if image doesn't load -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100" style="display: none;">
+                                <div class="text-center text-purple-600">
+                                    <i class="fas fa-user-graduate text-4xl md:text-6xl mb-4"></i>
+                                    <p class="text-base md:text-lg font-semibold">Pedro Almeida</p>
+                            
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                
+                <!-- Informações de Formação -->
+                <div>
+                    <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-100">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Formação Profissional</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-graduation-cap text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-lg mb-1">Formação Acadêmica</p>
+                                    <p class="text-gray-600 leading-relaxed">Psicologia pela Universidade Federal da Paraíba com ênfase em Psicologia Clínica</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-heart text-pink-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-lg mb-1">Abordagem Terapêutica</p>
+                                    <p class="text-gray-600 leading-relaxed">Abordagem Centrada na Pessoa - Base Humanista</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-certificate text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-800 text-lg mb-1">Registro Profissional</p>
+                                    <p class="text-gray-600 leading-relaxed">CRP 13/13565 - Conselho Regional de Psicologia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experiência Profissional -->
+            <div>
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Experiência Profissional</h3>
+                </div>
+                
+                <!-- Foto Profissional com Carousel (Centralizada) -->
+                <div class="flex justify-center">
+                    <div class="text-center w-full max-w-2xl">
+                        <div class="relative">
+                            <!-- Decorative background -->
+                            <div class="absolute -inset-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-2xl blur-2xl opacity-20"></div>
+                            
+                            <!-- Photo container with carousel overlay -->
+                            <div class="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto aspect-video rounded-2xl overflow-hidden border-4 sm:border-6 md:border-8 border-white shadow-2xl bg-gradient-to-br from-purple-50 to-blue-50 group cursor-pointer">
+                                <!-- Background Image -->
+                                <img 
+                                    src="./foto-profissional.jpg" 
+                                    alt="Pedro Almeida - Psicólogo Clínico em atendimento" 
+                                    class="w-full h-full object-cover object-center transition-all duration-500 group-hover:brightness-150 group-hover:contrast-125 group-hover:saturate-110"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                >
+                                <!-- Fallback content if image doesn't load -->
+                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100" style="display: none;">
+                                    <div class="text-center text-purple-600 px-4">
+                                        <i class="fas fa-user-tie text-4xl md:text-6xl mb-4"></i>
+                                        <p class="text-base md:text-lg font-semibold">Pedro Almeida</p>
+                                        <p class="text-sm">Psicólogo Clínico</p>
+              
+                                    </div>
+                                </div>
+                                
+                                <!-- Carousel Overlay -->
+                                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-500">
+                                    <!-- Service Slides -->
+                                    <div class="relative w-full h-full">
+                                        <!-- Slide 1: Psicoterapia Individual -->
+                                        <div id="service-slide-0" class="service-carousel-slide active absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-6 group-hover:items-end group-hover:justify-center group-hover:pb-4 sm:group-hover:pb-6 md:group-hover:pb-8 transition-all duration-500">
+                                            <div class="text-center text-white px-1 sm:px-2">
+                                                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-purple-500 bg-opacity-80 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:w-6 group-hover:h-6 sm:group-hover:w-8 sm:group-hover:h-8 md:group-hover:w-10 md:group-hover:h-10 transition-all duration-500">
+                                                    <i class="fas fa-comments text-sm sm:text-lg md:text-2xl group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500"></i>
+                                                </div>
+                                                <h4 class="text-sm sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 md:mb-3 group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500">Psicoterapia Individual</h4>
+                                                <p class="text-xs sm:text-xs md:text-sm leading-relaxed opacity-90 max-w-xs sm:max-w-xs md:max-w-sm group-hover:text-xs group-hover:opacity-100 transition-all duration-500">
+                                                    Atendimento psicoterapêutico individual com abordagem humanista centrada na pessoa. Um espaço seguro para autoconhecimento e crescimento pessoal.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 2: Plantão de Urgência -->
+                                        <div id="service-slide-1" class="service-carousel-slide absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-6 group-hover:items-end group-hover:justify-center group-hover:pb-4 sm:group-hover:pb-6 md:group-hover:pb-8 transition-all duration-500">
+                                            <div class="text-center text-white px-1 sm:px-2">
+                                                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-red-500 bg-opacity-80 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:w-6 group-hover:h-6 sm:group-hover:w-8 sm:group-hover:h-8 md:group-hover:w-10 md:group-hover:h-10 transition-all duration-500">
+                                                    <i class="fas fa-ambulance text-sm sm:text-lg md:text-2xl group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500"></i>
+                                                </div>
+                                                <h4 class="text-sm sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 md:mb-3 group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500">Plantão de Urgência 24h</h4>
+                                                <p class="text-xs sm:text-xs md:text-sm leading-relaxed opacity-90 max-w-xs sm:max-w-xs md:max-w-sm group-hover:text-xs group-hover:opacity-100 transition-all duration-500">
+                                                    Experiência sólida em plantão de urgência psicológica para situações que necessitam intervenção imediata. Disponível nos dias informados no Instagram.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Slide 3: Avaliação Psicológica -->
+                                        <div id="service-slide-2" class="service-carousel-slide absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-6 group-hover:items-end group-hover:justify-center group-hover:pb-4 sm:group-hover:pb-6 md:group-hover:pb-8 transition-all duration-500">
+                                            <div class="text-center text-white px-1 sm:px-2">
+                                                <div class="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-blue-500 bg-opacity-80 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:w-6 group-hover:h-6 sm:group-hover:w-8 sm:group-hover:h-8 md:group-hover:w-10 md:group-hover:h-10 transition-all duration-500">
+                                                    <i class="fas fa-clipboard-list text-sm sm:text-lg md:text-2xl group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500"></i>
+                                                </div>
+                                                <h4 class="text-sm sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 md:mb-3 group-hover:text-xs sm:group-hover:text-sm md:group-hover:text-base transition-all duration-500">Avaliação Psicológica</h4>
+                                                <p class="text-xs sm:text-xs md:text-sm leading-relaxed opacity-90 max-w-xs sm:max-w-xs md:max-w-sm group-hover:text-xs group-hover:opacity-100 transition-all duration-500">
+                                                    Experiente em psicodiagnóstico com público geral e especializado em mães de crianças com TEA. Processo completo com laudo detalhado.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Navigation Dots -->
+                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                        <button onclick="goToServiceSlide(0)" id="service-dot-0" class="service-carousel-dot active w-3 h-3 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all duration-300"></button>
+                                        <button onclick="goToServiceSlide(1)" id="service-dot-1" class="service-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all duration-300"></button>
+                                        <button onclick="goToServiceSlide(2)" id="service-dot-2" class="service-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all duration-300"></button>
+                                    </div>
+                                    
+                                    <!-- Progress Bars -->
+                                    <div class="absolute top-4 left-4 right-4 flex space-x-1">
+                                        <div class="flex-1 h-1 bg-white bg-opacity-30 rounded-full overflow-hidden">
+                                            <div id="service-progress-0" class="h-full bg-white transition-all duration-300" style="width: 0%;"></div>
+                                        </div>
+                                        <div class="flex-1 h-1 bg-white bg-opacity-30 rounded-full overflow-hidden">
+                                            <div id="service-progress-1" class="h-full bg-white transition-all duration-300" style="width: 0%;"></div>
+                                        </div>
+                                        <div class="flex-1 h-1 bg-white bg-opacity-30 rounded-full overflow-hidden">
+                                            <div id="service-progress-2" class="h-full bg-white transition-all duration-300" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#agendamento" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition">
+                    Agende sua Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Serviços Oferecidos</h2>
+                <p class="text-xl text-gray-600">Atendimento online e presencial (em breve) com qualidade e dedicação</p>
+            </div>
+            
+            <!-- Serviços Principais -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Serviços Principais</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-comments text-2xl text-purple-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Psicoterapia Individual</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Atendimento psicoterapêutico individual com abordagem humanista centrada na pessoa.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                            Agendar Consulta
+                        </button>
+                    </div>
+                    
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-ambulance text-2xl text-red-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Plantão de Urgência 24h</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Atendimento de urgência psicológica para situações que necessitam intervenção imediata.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fab fa-instagram text-purple-500 mr-2"></i>
+                                <span>Dias informados no @pedroalmeida.psi</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                            Solicitar Urgência
+                        </button>
+                    </div>
+                    
+                    <div class="service-card rounded-2xl p-8 card-hover border border-gray-200">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clipboard-list text-2xl text-blue-600"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Avaliação Psicológica</h4>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Psicodiagnóstico completo que ao final é gerado um laudo detalhado com orientações específicas.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Online disponível</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                <span>Presencial em breve</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToAgendamento()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Solicitar Avaliação
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outros Serviços -->
+            <div>
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Outros Serviços</h3>
+                <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+                    <div class="bg-white rounded-lg p-4 card-hover border border-gray-200 flex-1 min-w-64 max-w-72">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-briefcase text-green-600 text-sm"></i>
+                            </div>
+                            <h4 class="text-base font-semibold text-gray-800">Consultoria de RH</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">Consultoria especializada em recursos humanos para pequenos negócios.</p>
+                        <button onclick="scrollToAgendamento()" class="text-green-600 font-medium hover:text-green-700 transition text-sm">
+                            Saiba mais →
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 card-hover border border-gray-200 flex-1 min-w-64 max-w-72">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-compass text-orange-600 text-sm"></i>
+                            </div>
+                            <h4 class="text-base font-semibold text-gray-800">Orientação Vocacional</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">Orientação profissional para descobrir sua vocação e carreira ideal.</p>
+                        <button onclick="scrollToAgendamento()" class="text-orange-600 font-medium hover:text-orange-700 transition text-sm">
+                            Saiba mais →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Perguntas Frequentes</h2>
+                <p class="text-xl text-gray-600">Esclarecemos as principais dúvidas sobre nossos atendimentos</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(0)">
+                        <span class="font-semibold text-gray-800">Como funciona o atendimento online?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-0"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-0">
+                        <p class="text-gray-600">O atendimento online é realizado através de videochamada em plataforma segura e confidencial. Você precisa apenas de um dispositivo com câmera, microfone e conexão estável com a internet. O ambiente deve ser privado e confortável para você.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(1)">
+                        <span class="font-semibold text-gray-800">Qual a duração de uma sessão de psicoterapia?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-1"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-1">
+                        <p class="text-gray-600">Cada sessão de psicoterapia tem duração de 50 minutos. Este tempo é padronizado e permite um trabalho terapêutico adequado, respeitando tanto suas necessidades quanto os aspectos técnicos do processo.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(2)">
+                        <span class="font-semibold text-gray-800">Com que frequência devo fazer as sessões?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-2"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-2">
+                        <p class="text-gray-600">Geralmente recomendamos sessões semanais, mas a frequência pode variar conforme sua necessidade e disponibilidade. Algumas pessoas se beneficiam de sessões quinzenais, enquanto outras podem precisar de encontros mais frequentes em momentos específicos.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(3)">
+                        <span class="font-semibold text-gray-800">O que é a Abordagem Centrada na Pessoa?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-3"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-3">
+                        <p class="text-gray-600">A Abordagem Centrada na Pessoa (ACP), desenvolvida por Carl Rogers, é uma perspectiva humanista que valoriza a experiência subjetiva e a capacidade de autodesenvolvimento do indivíduo. Fundamenta-se em três pilares: empatia, congruência e aceitação positiva incondicional, que criam um ambiente de confiança e respeito. Essa abordagem ajuda no enfrentamento dos problemas ao promover o fortalecimento da autonomia, da autoestima e da autorreflexão, favorecendo soluções mais conscientes e sustentáveis.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(4)">
+                        <span class="font-semibold text-gray-800">Como funciona o plantão de urgência 24h?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-4"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-4">
+                        <p class="text-gray-600">O plantão de urgência é destinado a situações que necessitam intervenção psicológica imediata. Os dias de disponibilidade são informados no Instagram @pedroalmeida.psi. É um atendimento pontual para momentos de crise ou grande sofrimento emocional.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(5)">
+                        <span class="font-semibold text-gray-800">Quanto tempo dura uma avaliação psicológica?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-5"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-5">
+                        <p class="text-gray-600">A avaliação psicológica em média costuma durar 8 sessões. Inclui entrevistas que abordam todos os momentos da vida do avaliado, aplicação de testes, elaboração do laudo detalhado e contextualizado com as intervenções terapêuticas específicas e a entrevista devolutiva.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition" onclick="toggleFAQ(6)">
+                        <span class="font-semibold text-gray-800">Posso cancelar ou remarcar uma sessão?</span>
+                        <i class="fas fa-chevron-down text-gray-500 transform transition-transform" id="faq-icon-6"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4" id="faq-content-6">
+                        <p class="text-gray-600">Sim, isso é possível e será combinado com o psicólogo e esclarecido logo no primeiro atendimento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section id="instagram" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Acompanhe no Instagram</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Post 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <i class="fas fa-brain text-4xl mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Autocuidado Mental</h3>
+                            <p class="text-sm opacity-90">Pequenos hábitos que fazem grande diferença no seu dia a dia</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <span>@pedroalmeida.psi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="aspect-square bg-gradient-to-br from-blue-400 to-teal-400 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <i class="fas fa-heart text-4xl mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Inteligência Emocional</h3>
+                            <p class="text-sm opacity-90">Como reconhecer e lidar melhor com suas emoções</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <span>@pedroalmeida.psi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <i class="fas fa-user text-4xl mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Conheça o Profissional</h3>
+                            <p class="text-sm opacity-90">Saiba mais sobre a formação e experiência do psicólogo</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <span>@pedroalmeida.psi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://www.instagram.com/pedroalmeida.psi/" target="_blank" class="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <i class="fab fa-instagram mr-3 text-xl"></i>
+                    Seguir @pedroalmeida.psi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento Section -->
+    <section id="agendamento" class="section-padding bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Agende sua Consulta</h2>
+                <p class="text-xl text-gray-600">Entre em contato e dê o primeiro passo para cuidar da sua saúde mental</p>
+            </div>
+            
+            <!-- Canais de Contato -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-comments text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Entre em Contato</h3>
+                        <p class="text-gray-600 mb-4">Escolha a forma mais conveniente para você:</p>
+                    </div>
+                
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <a href="https://wa.me/5583996255274" target="_blank" class="bg-green-50 border-2 border-green-200 rounded-xl p-6 text-center hover:border-green-400 transition card-hover block">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fab fa-whatsapp text-xl text-green-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">WhatsApp</h4>
+                            <p class="text-gray-600 text-sm mb-2">Resposta rápida e prática</p>
+                            <p class="text-green-600 font-semibold">(83) 9 9625-5274</p>
+                        </a>
+                        
+                        <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 text-center card-hover">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-envelope text-xl text-blue-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">E-mail</h4>
+                            <p class="text-gray-600 text-sm mb-2">Para informações detalhadas</p>
+                            <p class="text-blue-600 font-semibold mb-3">psi.phna@gmail.com</p>
+                            <button onclick="copyEmail()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+                                <i class="fas fa-copy mr-2"></i>Copiar E-mail
+                            </button>
+                        </div>
+                        
+                        <a href="https://www.instagram.com/pedroalmeida.psi/" target="_blank" class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 text-center hover:border-purple-400 transition card-hover block">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fab fa-instagram text-xl text-purple-600"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Instagram</h4>
+                            <p class="text-gray-600 text-sm mb-2">Conteúdo e dicas</p>
+                            <p class="text-purple-600 font-semibold">@pedroalmeida.psi</p>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Horários de Atendimento</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-semibold text-gray-700 mb-1">Psicoterapia Individual</h5>
+                                <p class="text-gray-600 text-sm">Segunda a Sexta: Horários a combinar</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-700 mb-1">Plantão de Urgência 24h</h5>
+                                <p class="text-gray-600 text-sm">Dias informados no @pedroalmeida.psi</p>
+                                <p class="text-gray-600 text-sm">Disponível 24 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <!-- Formulário de Pré-Agendamento -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Pré-Agendamento Online</h3>
+                    <p class="text-gray-600">Ou preencha o formulário abaixo como opção complementar</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-4 border-2 border-purple-100 max-w-4xl mx-auto">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScD7LESEzl9XXZNzXYREqOEtPiGyMhtmBCgfT4Uodm5rpac4g/viewform?embedded=true" 
+                        width="100%" 
+                        height="500" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="rounded-lg"
+                        style="border: none; background: white; border-radius: 8px;">
+                        Carregando formulário...
+                    </iframe>
+                </div>
+                
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-500">
+                        <i class="fas fa-shield-alt mr-1"></i>
+                        Suas informações são tratadas com total confidencialidade
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pedro Almeida</h3>
+                    <p class="text-gray-300 mb-4">Psicólogo Clínico</p>
+                    <p class="text-gray-400 text-sm">CRP 13/13565</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>Psicoterapia Individual</li>
+                        <li>Plantão de Urgência 24h</li>
+                        <li>Avaliação Psicológica</li>
+                        <li>Consultoria de RH</li>
+                        <li>Orientação Vocacional</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contato</h4>
+                    <div class="space-y-2 text-gray-300 text-sm">
+                        <p><i class="fab fa-whatsapp mr-2"></i>(83) 9 9625-5274</p>
+                        <p><i class="fas fa-envelope mr-2"></i>psi.phna@gmail.com</p>
+                        <p><i class="fab fa-instagram mr-2"></i>@pedroalmeida.psi</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Modalidades</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>✓ Atendimento Online</li>
+                        <li>⏳ Presencial (em breve)</li>
+                        <li>🕐 Plantão 24h</li>
+                        <li>📋 Avaliações Personalizadas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Pedro Almeida - Psicólogo Clínico. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div id="floating-container" class="floating-btn">
+        <a href="#agendamento" class="bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition block relative">
+            <i class="fas fa-calendar-plus text-xl"></i>
+            <!-- Notification Badge -->
+            <div id="notification-badge" class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full opacity-0 transition-all duration-300"></div>
+        </a>
+        <!-- Message Tooltip -->
+        <div id="message-tooltip" class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-xl opacity-0 transition-all duration-300 whitespace-nowrap text-sm font-medium border border-gray-200">
+            <span id="message-text"></span>
+            <!-- Arrow -->
+            <div class="absolute top-1/2 -right-2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
+        </div>
+    </div>
+
+    <script>
+
+
+        // FAQ Functions
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Function to scroll to agendamento
+        function scrollToAgendamento() {
+            document.getElementById('agendamento').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Floating button notification system
+        const messages = [
+            "Cuidar da mente também é um gesto de autocuidado.",
+            "Você não precisa enfrentar tudo sozinho.",
+            "Dar o primeiro passo já é parte da transformação.",
+            "Falar sobre o que sente pode trazer leveza.",
+            "Seu bem-estar merece espaço na sua rotina."
+        ];
+
+        let userInteracted = false;
+        let messageShown = false;
+
+        function trackUserInteraction() {
+            if (!userInteracted) {
+                userInteracted = true;
+                
+                const delay = Math.random() * 7000 + 8000; // 8-15 seconds
+                
+                setTimeout(() => {
+                    if (!messageShown) {
+                        showNotificationMessage();
+                    }
+                }, delay);
+            }
+        }
+
+        function showNotificationMessage() {
+            const badge = document.getElementById('notification-badge');
+            const tooltip = document.getElementById('message-tooltip');
+            const messageText = document.getElementById('message-text');
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            messageText.textContent = randomMessage;
+            
+            badge.style.opacity = '1';
+            badge.style.animation = 'pulse 1.5s infinite';
+            
+            setTimeout(() => {
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(-50%) scale(1)';
+                
+                setTimeout(() => {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(-50%) scale(0.95)';
+                    
+                    setTimeout(() => {
+                        badge.style.opacity = '0';
+                        badge.style.animation = 'none';
+                    }, 300);
+                }, 5000);
+                
+            }, 1000);
+            
+            messageShown = true;
+        }
+
+        // Track user interactions
+        ['scroll', 'mousemove', 'click', 'keydown', 'touchstart'].forEach(event => {
+            document.addEventListener(event, trackUserInteraction, { once: true });
+        });
+
+        // Hide message when floating button is clicked
+        document.getElementById('floating-container').addEventListener('click', function() {
+            const tooltip = document.getElementById('message-tooltip');
+            const badge = document.getElementById('notification-badge');
+            
+            tooltip.style.opacity = '0';
+            badge.style.opacity = '0';
+            badge.style.animation = 'none';
+        });
+
+        // Service Carousel functionality
+        let currentServiceSlide = 0;
+        let serviceSlideInterval;
+        const totalServiceSlides = 3;
+        const serviceSlideDuration = 5000; // 5 seconds per slide
+
+        function startServiceCarousel() {
+            // Start progress bar animation
+            startServiceProgressBar(currentServiceSlide);
+            
+            // Set interval for automatic slide change
+            serviceSlideInterval = setInterval(() => {
+                nextServiceSlide();
+            }, serviceSlideDuration);
+        }
+
+        function startServiceProgressBar(slideIndex) {
+            // Reset all progress bars immediately
+            for (let i = 0; i < totalServiceSlides; i++) {
+                const progress = document.getElementById(`service-progress-${i}`);
+                if (progress) {
+                    progress.style.transition = 'none';
+                    progress.style.width = '0%';
+                }
+            }
+            
+            // Force reflow to ensure reset is applied
+            document.getElementById(`service-progress-${slideIndex}`).offsetHeight;
+            
+            // Start current progress bar after a small delay
+            setTimeout(() => {
+                const currentProgress = document.getElementById(`service-progress-${slideIndex}`);
+                if (currentProgress) {
+                    currentProgress.style.transition = `width ${serviceSlideDuration}ms linear`;
+                    currentProgress.style.width = '100%';
+                }
+            }, 100);
+        }
+
+        function goToServiceSlide(slideIndex) {
+            // Clear intervals
+            clearInterval(serviceSlideInterval);
+            
+            // Hide current slide
+            const currentSlideElement = document.getElementById(`service-slide-${currentServiceSlide}`);
+            const currentDotElement = document.getElementById(`service-dot-${currentServiceSlide}`);
+            if (currentSlideElement) currentSlideElement.classList.remove('active');
+            if (currentDotElement) currentDotElement.classList.remove('active');
+            
+            // Show new slide
+            currentServiceSlide = slideIndex;
+            const newSlideElement = document.getElementById(`service-slide-${currentServiceSlide}`);
+            const newDotElement = document.getElementById(`service-dot-${currentServiceSlide}`);
+            if (newSlideElement) newSlideElement.classList.add('active');
+            if (newDotElement) newDotElement.classList.add('active');
+            
+            // Restart carousel
+            startServiceCarousel();
+        }
+
+        function nextServiceSlide() {
+            const nextIndex = (currentServiceSlide + 1) % totalServiceSlides;
+            goToServiceSlide(nextIndex);
+        }
+
+        // Pause service carousel on hover
+        function pauseServiceCarousel() {
+            clearInterval(serviceSlideInterval);
+            
+            // Pause progress bar
+            const currentProgress = document.getElementById(`service-progress-${currentServiceSlide}`);
+            if (currentProgress) {
+                const computedStyle = window.getComputedStyle(currentProgress);
+                const currentWidth = computedStyle.width;
+                currentProgress.style.width = currentWidth;
+                currentProgress.style.transition = 'none';
+            }
+        }
+
+        function resumeServiceCarousel() {
+            const currentProgress = document.getElementById(`service-progress-${currentServiceSlide}`);
+            if (currentProgress) {
+                const currentWidth = parseFloat(currentProgress.style.width);
+                const remainingTime = serviceSlideDuration * (1 - currentWidth / 100);
+                
+                // Resume progress bar
+                currentProgress.style.transition = `width ${remainingTime}ms linear`;
+                currentProgress.style.width = '100%';
+                
+                // Resume slide interval
+                serviceSlideInterval = setTimeout(() => {
+                    nextServiceSlide();
+                    serviceSlideInterval = setInterval(() => {
+                        nextServiceSlide();
+                    }, serviceSlideDuration);
+                }, remainingTime);
+            }
+        }
+
+        // Initialize service carousel when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startServiceCarousel();
+            
+            // Add hover listeners to service carousel
+            const serviceCarousel = document.querySelector('.service-carousel-slide');
+            if (serviceCarousel && serviceCarousel.parentElement && serviceCarousel.parentElement.parentElement) {
+                const carouselContainer = serviceCarousel.parentElement.parentElement;
+                carouselContainer.addEventListener('mouseenter', pauseServiceCarousel);
+                carouselContainer.addEventListener('mouseleave', resumeServiceCarousel);
+            }
+        });
+
+        // Function to copy email to clipboard
+        function copyEmail() {
+            const email = 'psi.phna@gmail.com';
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                // Use modern clipboard API
+                navigator.clipboard.writeText(email).then(() => {
+                    showCopyFeedback('E-mail copiado para a área de transferência!');
+                }).catch(() => {
+                    fallbackCopyEmail(email);
+                });
+            } else {
+                // Fallback for older browsers
+                fallbackCopyEmail(email);
+            }
+        }
+
+        function fallbackCopyEmail(email) {
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopyFeedback('E-mail copiado para a área de transferência!');
+            } catch (err) {
+                showCopyFeedback('Não foi possível copiar. E-mail: psi.phna@gmail.com');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showCopyFeedback(message) {
+            // Create or get existing feedback element
+            let feedback = document.getElementById('copy-feedback');
+            if (!feedback) {
+                feedback = document.createElement('div');
+                feedback.id = 'copy-feedback';
+                feedback.className = 'fixed top-20 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+                document.body.appendChild(feedback);
+            }
+            
+            feedback.textContent = message;
+            feedback.style.transform = 'translateX(0)';
+            
+            setTimeout(() => {
+                feedback.style.transform = 'translateX(100%)';
+            }, 3000);
+        }
+
+
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97db5f6d30390b0d',t:'MTc1NzYzNzgyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
